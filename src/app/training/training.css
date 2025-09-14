@@ -1,0 +1,38 @@
+.training-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 4 equal columns */
+    gap: 20px;
+    /* space between cards */
+}
+
+.card-training {
+    width: 200px;
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+.training-padding{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.card-training2{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+        align-items: center;
+}
+
+.calendar-header {
+    max-width: 250px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.calendar-header h4 {
+    font-size: 14px;
+    /* decrease as needed */
+    margin: 0;
+}

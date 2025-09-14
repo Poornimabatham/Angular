@@ -1,0 +1,36 @@
+.people-container{
+    width: 1000px;
+    margin-top: 20px; /* Add space at the top */
+    position: relative; /* Use relative instead of absolute */
+    padding: 10px; /* Add internal padding */
+    box-sizing: border-box; /* Ensure padding doesn't affect total width */
+}
+.people-container .people-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card{
+    width: 200px;
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .people-container {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+    .people-container .people-content{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }   
+    .card{
+        width: 100%;
+    }
+}

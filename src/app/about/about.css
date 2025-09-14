@@ -1,0 +1,41 @@
+.cards-container{
+    margin-top: 93px;
+    margin-left: 23px;
+    margin-right: 23px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card{
+background-color: #e0e0e0;
+    flex: 0 1 30%;
+    /* flex-basis 30%, don’t grow, shrink if needed */
+    height: 250px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+}
+
+
+    @media (max-width:900px) {
+        .card{
+            flex: 0 1 45%;
+        }
+    }
+    
+    @media (max-width:600px) {
+        .card{
+            flex: 0 1 100%
+        }
+        
+    }

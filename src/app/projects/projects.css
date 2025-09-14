@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    /* margin-left: 0px; */
+    width: 1200px; /* Increased width to fit 5 columns */
+    height: 300px;
+    /* Positioning options - uncomment the one you want */
+    
+    /* Option 1: Center the container */
+    /* margin: auto 0; */
+    
+    /* Option 2: Move to right side */
+    /* margin-left: 0;
+ margin-right: auto; */
+    
+    /* Option 3: Absolute positioning */
+    position: absolute;
+    /* top: 50px; */
+    left: 290px;
+    
+    /* Option 4: Fixed positioning (stays when scrolling) */
+    /* position: fixed; */
+    /* top: 20px; */
+    /* left: 20px; *
+    
+    /* Option 5: Flexbox positioning */
+    /* position: relative; */
+    /* left: 100px; */
+    /* top: 50px; */
+}
+.projects-container {
+display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 4 equal columns */
+    gap:5px;
+    /* space between cards */
+    width: 100%; /* Make projects-container fill main-container */
+    overflow: hidden; /* Hide any overflow */
+}
+
+.card-projects{
+    width: 100%; /* Make cards fill their grid cells */
+    max-width: 200px; /* Keep max width */
+    background: #f8f9fa;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+}

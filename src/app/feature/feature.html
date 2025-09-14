@@ -1,0 +1,64 @@
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+<ul class="sidebar-list">
+    <li>
+        <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
+            <mat-icon>dashboard</mat-icon>
+            <span class="link-text">Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="/people" routerLinkActive="active" class="nav-link">
+            <mat-icon>people</mat-icon>
+            <span class="link-text">People</span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="/projects" routerLinkActive="active" class="nav-link">
+            <mat-icon>work</mat-icon>
+            <span class="link-text">Projects</span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="/training" routerLinkActive="active" class="nav-link">
+            <mat-icon>calendar_today</mat-icon>
+            <span class="link-text">Training</span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="/feature/calendar" routerLinkActive="active" class="nav-link">
+            <mat-icon>calendar_today</mat-icon>
+            <span class="link-text">Calendar</span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="/feature/calendar" routerLinkActive="active" class="nav-link">
+            <mat-icon>calendar_today</mat-icon>
+            <span class="link-text">Calendar</span>
+        </a>
+    </li>
+
+    <li>
+        <a routerLink="/feature/calendar" routerLinkActive="active" class="nav-link">
+            <mat-icon>calendar_today</mat-icon>
+            <span class="link-text">Calendar</span>
+        </a>
+    </li>
+</ul>
+
+
+    </aside>
+
+    <!-- Button Column -->
+    <!-- <div class="button-column">
+        <button mat-raised-button color="primary" (click)="openWidget()">
+            Add Widget
+        </button>
+    </div> -->
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
+</div>

@@ -1,0 +1,252 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    /* hides horizontal scroll */
+    overflow-y: auto;
+    /* enables normal vertical scroll */
+    /* ensures 100% height works */
+}
+
+/* Push main content below navbar */
+body {
+    padding-top: 60px;
+    /* same as navbar height */
+}
+
+.navbar {
+    width: 100%;
+    /* full width */
+    height: 70px;
+    /* fixed navbar height */
+    background: white;
+    box-shadow: inset 0px 0px 10px gray;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.navbar .left-container ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    list-style-type: none;
+}
+
+.navbar .right-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    list-style-type: none;
+}
+
+.navbar .right-container button {
+    /* background-color: blue; */
+    /* color: white; */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-link {
+    cursor: pointer;
+    /* show hand pointer */
+    text-decoration: none;
+    /* optional, removes underline */
+    color: black;
+    /* optional, set link color */
+}
+
+.nav-link:hover {
+    color: blue;
+    /* optional, hover effect */
+}
+
+/* Mobile specific styles */
+.navbar-header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.desktop-logo {
+    display: block;
+}
+
+.desktop-content {
+    display: block;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: black;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Mobile drawer */
+.mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 1001;
+}
+
+.mobile-drawer.open {
+    left: 0;
+}
+
+.drawer-content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+.drawer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    flex: 1;
+}
+
+.drawer-nav li {
+    margin-bottom: 15px;
+}
+
+.drawer-nav .nav-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.drawer-nav .nav-link:hover {
+    background-color: #f0f0f0;
+}
+
+.drawer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.drawer-actions button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-header {
+        display: flex;
+    }
+    
+    .desktop-logo {
+        display: none;
+    }
+    
+    .desktop-content {
+        display: none !important;
+        /* Force hide desktop content on mobile */
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    
+   
+    .navbar h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    
+    /* Ensure right-container is completely hidden on mobile */
+    .right-container {
+        display: none !important;
+    }
+    
+    /* Ensure left-container is completely hidden on mobile */
+    .left-container {
+        display: none !important;
+    }
+}

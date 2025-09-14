@@ -1,0 +1,49 @@
+<div class="navbar">
+    <!-- Mobile header with hamburger menu -->
+    <div class="navbar-header">
+        <h1>Myapp</h1>
+        <div class="hamburger" (click)="toggleDrawer()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Desktop navigation -->
+    <h1 class="desktop-logo">Myapp</h1> 
+    
+    <div class="left-container desktop-content">
+        <ul>
+            <li><a routerLink="/" class="nav-link" style="color: black; font-size: large; padding-right: 22px;">Home</a></li>
+            <li><a routerLink="/about" class="nav-link" style="color: black; font-size: large; padding-right: 22px;">About</a></li>
+            <li><a routerLink="/contact" class="nav-link" style="color:black; font-size: large; padding-right: 22px;">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="right-container desktop-content">
+        <button id="btn btn-primary" (click)="gotoHome()">Logout</button>
+        <button mat-raised-button color="accent" (click)="gotoFeature()">Feature</button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" [class.open]="isDrawerOpen">
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <h3>Menu</h3>
+                <button class="close-btn" (click)="closeDrawer()">&times;</button>
+            </div>
+            <ul class="drawer-nav">
+                <li><a routerLink="/" class="nav-link" (click)="closeDrawer()">Home</a></li>
+                <li><a routerLink="/about" class="nav-link" (click)="closeDrawer()">About</a></li>
+                <li><a routerLink="/contact" class="nav-link" (click)="closeDrawer()">Contact</a></li>
+            </ul>
+            <div class="drawer-actions">
+                <button id="btn btn-primary" (click)="gotoHome(); closeDrawer()">Logout</button>
+                <button mat-raised-button color="accent" (click)="gotoFeature(); closeDrawer()">Feature</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for mobile -->
+    <div class="overlay" [class.active]="isDrawerOpen" (click)="closeDrawer()"></div>
+</div>

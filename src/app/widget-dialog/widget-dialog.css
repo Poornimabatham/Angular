@@ -1,0 +1,14 @@
+.example-card{
+    padding: 23px;
+}
+
+
+.example-card mat-card-title {
+    display: flex;
+    /* make title itself flex */
+    justify-content: flex-end;
+    /* align title text left */
+    margin: 0px;
+    font-weight: bold;
+    color: green;
+}
