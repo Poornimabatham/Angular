@@ -11,15 +11,22 @@ import { Projects } from './projects/projects';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Navbar, Feature,  MatIconModule ,    MatSlideToggleModule
- // <- add this
-],
+  imports: [
+    RouterOutlet,
+    Navbar,
+    Feature,
+    MatIconModule,
+    MatSlideToggleModule,
+    // <- add this
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('myapp');
+  menuOpen = false;
 
-
-
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }
