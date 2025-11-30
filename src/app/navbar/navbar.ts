@@ -11,7 +11,8 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./navbar.css']
 })
 export class Navbar {
-  
+    menuOpen = false;
+
   isDrawerOpen: boolean = false;
   
   constructor(private router: Router) { }
@@ -33,4 +34,10 @@ export class Navbar {
     this.isDrawerOpen = false;
   }
 
+
+toggleMenu() {
+  this.menuOpen = !this.menuOpen;
 }
+
+}
+

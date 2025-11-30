@@ -19,11 +19,75 @@
 .sidebar {
     height: 100vh   ;
     width: 250px;
-    background: #f0f0f0;
+    background:rgb(15 23 42);
     padding: 20px;
+
     border-right: 2px solid #ddd;
 }
 
+.text-white{
+    --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+input[placeholder="Dashboard"]::placeholder {
+    color: white;
+    padding: 2px;
+    font-style: italic;
+}
+.sidebar ul li {
+    margin-top: 1gi0px;
+    /* space between each li */
+}
+
+/* Remove margin for last li if needed */
+ul li:last-child {
+    margin-right: 0;
+}
+.circle {
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    /* horizontal center */
+    align-items: center;
+    /* vertical center */
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+}
+/* Hide all menus by default on small screens */
+/* MOBILE MENU */
+@media (max-width: 768px) {
+    .menu-container {
+        display: none !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        background: #111;
+        padding: 20px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 220px;
+        border-radius: 10px;
+        z-index: 999;
+    }
+
+    .menu-container.open {
+        display: flex !important;
+    }
+
+    .hamburger-btn {
+        background: transparent;
+        font-size: 30px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+}
 .content {
     flex: 1;
     padding: 20px;

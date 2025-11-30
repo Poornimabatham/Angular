@@ -1,89 +1,114 @@
 <header>
-    <nav class=" navbar  d-flex justify-content-between align-items-center px-4 py-2">
+  <nav class="navbar d-flex justify-content-between align-items-center px-4 py-2">
+    <!-- Left section: logo -->
+    <div class="d-flex align-items-center">
+      <img
+        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/689394b6f9eb0c3b759dad53/50a3bdf13_LogowithWhiteBackground.png"
+        style="height: 30px"
+      />
+      <h3 class="logo ml-1 text-white p-1">Resume</h3>
+      <span>AI</span>
+      <ul class="d-flex gap-4 list-unstyled mx-0 flex-wrap">
+        <li><a routerLink="/dashboard" class="nav-link">Dashboard</a></li>
+        <li><a routerLink="/people" class="nav-link">People</a></li>
+        <li><a routerLink="/projects" class="nav-link">Projects</a></li>
+        <li><a routerLink="/training" class="nav-link">Training</a></li>
+        <li><a routerLink="/feature/calendar" class="nav-link">Calendar</a></li>
+      </ul>
+    </div>
 
-        <!-- Left side: Logo + Menu -->
-        <div class="d-flex align-items-center">
-            <h1 class="logo me-5">Logo</h1>
+    <!-- ⭐ THIS container goes into hamburger on mobile ⭐ -->
+    <div class="menu-container d-flex align-items-center gap-4">
+      <!-- Main menu -->
 
-            <ul class="d-flex gap-4 list-unstyled mx-4">
-                <li><a routerLink="/dashboard" routerLinkActive="active" class="nav-link">Dashboard</a></li>
-                <li><a routerLink="/people" routerLinkActive="active" class="nav-link">People</a></li>
-                <li><a routerLink="/projects" routerLinkActive="active" class="nav-link">Projects</a></li>
-                <li><a routerLink="/training" routerLinkActive="active" class="nav-link">Training</a></li>
-                <li><a routerLink="/feature/calendar" routerLinkActive="active" class="nav-link">Calendar</a></li>
-            </ul>
-        </div>
+      <!-- GitHub Icon -->
+      <svg
+        height="28"
+        width="28"
+        viewBox="0 0 24 24"
+        class="octicon octicon-mark-github mr-2 text-white"
+      >
+        <path d="M12 1C5.923 1..."></path>
+      </svg>
 
-        <!-- Right side: Icons + Button -->
-        <div class>
-            <ul class="d-flex align-items-center gap-3 list-unstyled mx-0">
+      <!-- Download Button -->
+      <a class="btn mr-2 p-1" style="border: 1px solid orange" href="#"> Download </a>
 
-                <!-- GitHub Icon -->
-                <li style="cursor: pointer;">
-                    <svg height="28" width="28" aria-hidden="true" viewBox="0 0 24 24"
-                        class="octicon octicon-mark-github">
-                        <path
-                            d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z">
-                        </path>
-                    </svg>
-                </li>
+      <!-- Circle -->
+      <span class="circle">P</span>
+    </div>
 
-                <!-- Twitter Icon -->
-                <li>
-                    <a href="https://twitter.com/getbootstrap" target="_blank" class="nav-link p-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 416.32" height="28" focusable="false">
-                            <path fill="currentColor" d="M160.83 416.32c193.2 0 298.92-160.22 298.92-298.92..."></path>
-                        </svg>
-                    </a>
-                </li>
-
-                <!-- Download Button -->
-                <li >
-                    <a class="btn" style="border: 1px solid orange; color: 1px solid orange;" href="/docs/4.6/getting-started/download/">Download</a>
-                </li>
-
-            </ul>
-        </div>
-
-    </nav>
+    <!-- Hamburger Button (only visible on mobile) -->
+    <button class="hamburger-btn d-lg-none" (click)="toggleMenu()">☰</button>
+  </nav>
 </header>
 
 <div class="layout d-flex">
-    <aside class="sidebar">
-        <!-- Sidebar items -->
-         <input type="text">
-         <div>
-            <ul>
-                <li>Home</li>
-                <li>Accounts</li>
-                <li>Settings</li>
-                <li>Projects</li>
-                <li>Trainig</li>
-               
-            </ul>
-         </div>
-    </aside>
+  <aside class="sidebar">
+    <!-- Sidebar items -->
+    <div style="position: relative; width: 220px">
+      <!-- Input field -->
+      <input
+        type="text"
+        placeholder="Dashboard"
+        style="
+          width: 100%;
+          height: 35px;
+          padding-left: 30px; /* space for icon */
+          border-radius: 11px;
+          border: 2px solid white;
+          background: rgba(147, 51, 234, 1);
+          color: white;
+        "
+      />
 
-    <main class="content">
-        <!-- Main content -->
-        <div class="content">
-            <h1>BreadCrumb</h1>
-            <p>Indicate the current page’s location within a navigational hierarchy that  <span>
-                automatically adds separators via CSS.
-
-            </span>
-</p>
-<div class="card d-flex flex-row " style="width: 28rem;">
-    <img src="	https://srv.carbonads.net/static/30242/d4d1168c21c4a969fe187b85cedb06bd4a7cbb65" class="card-img-left" style="width: 40%; object-fit: cover;margin: auto;">
-    <div class="card-body p-3">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text…</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <!-- Icon inside input -->
+      <span
+        style="
+          position: absolute;
+          left: 8px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: white;
+          pointer-events: none; /* allows typing without blocking */
+          font-size: 16px;
+        "
+      >
+        🔍
+      </span>
     </div>
-</div>
 
+    <div>
+      <ul class="text-white  my-2 mx-2 p-3">
+        <li>Home</li>
+        <li>Products</li>
+        <li>Dashboard</li>
+        <li>Settings</li>
+        <li>More</li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="content">
+    <!-- Main content -->
+    <div class="content">
+      <h1>BreadCrumb</h1>
+      <p>
+        Indicate the current page’s location within a navigational hierarchy that
+        <span> automatically adds separators via CSS. </span>
+      </p>
+      <div class="card d-flex flex-row" style="width: 28rem">
+        <img
+          src="	https://srv.carbonads.net/static/30242/d4d1168c21c4a969fe187b85cedb06bd4a7cbb65"
+          class="card-img-left"
+          style="width: 40%; object-fit: cover; margin: auto"
+        />
+        <div class="card-body p-3">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text…</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-        
-
-    </main>
+      </div>
+    </div>
+  </main>
 </div>
