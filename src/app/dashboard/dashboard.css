@@ -79,7 +79,11 @@ height: 300px;
 
 
  .card-container .card1 .card-body{
-    border: 2px solid white;
+    border: 2px solid white;s
     padding: 20px;
     border-radius: 8px;  /* optional rounded corners */
+}
+
+.custom-card{
+    border: 2px solid grey;
 }
