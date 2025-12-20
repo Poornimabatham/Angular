@@ -1,43 +1,45 @@
 <div class="container my-5">
-
-    <!-- Product Cards -->
-    <div class="row">
-        <div class="col-md-4 col-lg-3 mb-4" *ngFor="let product of Products">
-            <div class="card h-100 shadow-sm">
-              
-
-                <div class="card-body d-flex flex-column">
-                    <div class="d-flex justify-content-between align-items-center ">
-                        <h5 class="card-title">{{product.title}}</h5>
-                        <button class="circle-btn" (click) = "addToCart(userModal)">+</button>
+<!-- Loader Overlay -->
+<div *ngIf="isLoading" class="loader-overlay">
+    <mat-spinner></mat-spinner>
+</div>
+    
+    <div class="row" *ngIf="!isLoading">
+        <!-- Your existing product cards -->
+        <div class="row">
+            <div class="col-md-4 col-lg-3 mb-4" *ngFor="let product of Products; let i = index">
+                <div class="card h-100 shadow-sm slide-up"   [style.animationDelay]="i * 0.1 + 's'">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">{{product.title}}</h5>
+                            <button class="circle-btn" (click)="openModal(product)">+</button>
+                        </div>
+                        <img [src]="product.images[0]" class="card-img-top" alt="{{product.title}}"
+                            style="height: 200px; object-fit: cover; border-radius: 23px; box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);">
                     </div>
-                   
-                    <img [src]="product.images[0]" class="card-img-top" alt="{{product.title}}" style="height: 200px; object-fit: cover;    border: none;
-    border-radius: 23px;
-    box-shadow: 1;
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);">
-                  
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Pagination -->
+    <!-- Product Cards -->
    
 </div>
 
-<!-- MODAL TEMPLATE -->
-<ng-template #userModal>
-    <div class="modal-header">
-        <h5 class="modal-title">Add to Cart</h5>
-        <button class="btn-close" (click)="closeModal()"></button>
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <h5>{{selectedProduct?.title}}</h5>
+            <button class="close-btn" (click)="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <img [src]="selectedProduct?.images[0]" style="width: 100%; height: 200px; object-fit: cover;">
+            <p>Price: ${{selectedProduct?.price}}</p>
+            <p>{{selectedProduct?.description}}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" (click)="closeModal()">Add to Cart</button>
+            <button class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
     </div>
-
-    <div class="modal-body">
-        Product added to cart ✅
-    </div>
-
-    <div class="modal-footer">
-        <button class="btn btn-secondary" (click)="closeModal()">Close</button>
-    </div>
-</ng-template>
+</div>

@@ -6,6 +6,7 @@ import { Dashboard } from './dashboard/dashboard';
 import { Training } from './training/training';
 import { Projects } from './projects/projects';
 import { People } from './people/people';
+import { UserManagement } from './user-management/user-management';
 
 export const routes: Routes = [
   {
@@ -30,7 +31,7 @@ export const routes: Routes = [
   },
   {
     path: 'projects',
-    component: Projects,
+    component: UserManagement,
   },
   {
     path: 'people',

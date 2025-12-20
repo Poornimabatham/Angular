@@ -76,10 +76,21 @@ min-height: 250px; /* at least this height, can grow with content */
 width: 500px;
 height: 300px;
 }
+@keyframes bounceVertical {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* move up */
+  }
+}
 
+.bounce-btn {
+  animation: bounceVertical 1s infinite;
+}
 
  .card-container .card1 .card-body{
-    border: 2px solid white;s
+    border: 2px solid white;
     padding: 20px;
     border-radius: 8px;  /* optional rounded corners */
 }

@@ -34,6 +34,7 @@
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+
 input[placeholder="Dashboard"]::placeholder {
     color: white;
     padding: 2px;
