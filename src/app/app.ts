@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { Feature } from './feature/feature';
 import { Projects } from './projects/projects';
+import { UserManagement } from './user-management/user-management';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,8 @@ import { Projects } from './projects/projects';
     Feature,
     MatIconModule,
     MatSlideToggleModule,
+    UserManagement,
+    CommonModule
     // <- add this
   ],
   templateUrl: './app.html',
@@ -29,4 +32,15 @@ export class App {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
+  isSidebarCollapsed = false;
+
+  toggleSidebar() {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+  }
+  showContactSubmenu = false; // 👈 submenu toggle variable
+
+  toggleContactSubmenu() {
+    this.showContactSubmenu = !this.showContactSubmenu;
+  }
+  
 }
