@@ -13,7 +13,9 @@ export class People implements OnInit {
     Users: any[] = [];
   isLoading = true  
     filteredUsers: any[] = [];
-    searchTerm: string = '';
+  searchTerm: string = '';
+  isModalOpen = false;
+  newUser = { name: '', email: '', phone: '', website: '' };
   constructor(private http: HttpClient) { }
   
   ngOnInit(): void {
@@ -51,4 +53,24 @@ getStatusTextColor(index: number): string {
   return this.getStatus(index) === 'Process' ? 'black' : 'white';
 }
 
+  openAddModal() {
+    this.isModalOpen = true;
+  }
+  closeAddModal() {
+    this.isModalOpen = false;
+  }
+  addNewUser() {
+    
+    if (this.newUser.name && this.newUser.email && this.newUser.phone) {
+    const user = {
+      id: this.Users.length + 1,
+      name: this.newUser.name,
+      email: this.newUser.email,
+      phone: this.newUser.phone
+    };
+    this.Users.push(user);
+    this.filteredUsers = [...this.Users];
+    this.closeAddModal();
+  }
+  }
 }

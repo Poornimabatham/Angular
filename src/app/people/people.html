@@ -39,7 +39,7 @@
         </div>
 
         <!-- RIGHT SIDE -->
-        <button class="btn d-flex align-items-center gap-2">
+        <button class="btn d-flex align-items-center gap-2" (click)="openAddModal()">
           <img src="/images/Vector1.svg" alt="Vector icon" />
           Add Customer
         </button>
@@ -87,3 +87,34 @@
     </div>
   </div>
 </section>
+
+
+<!-- Add Customer Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeAddModal()">
+   <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+         <h5>Add Customer</h5>
+         <button class="close-btn" (click)="closeAddModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+         <form>
+            <div class="mb-3">
+               <label class="form-label">Name</label>
+               <input type="text" class="form-control" [(ngModel)]="newUser.name" name="name">
+            </div>
+            <div class="mb-3">
+               <label class="form-label">Email</label>
+               <input type="email" class="form-control" [(ngModel)]="newUser.email" name="email">
+            </div>
+            <div class="mb-3">
+               <label class="form-label">Phone</label>
+               <input type="text" class="form-control" [(ngModel)]="newUser.phone" name="phone">
+            </div>
+         </form>
+      </div>
+      <div class="modal-footer">
+         <button class="btn btn-primary" (click)="addNewUser()">Add Customer</button>
+         <button class="btn btn-secondary" (click)="closeAddModal()">Cancel</button>
+      </div>
+   </div>
+</div>
