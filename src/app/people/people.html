@@ -1,7 +1,89 @@
-<div class="people-container">
-   <div class="people-content">
-    <div class="card">card1</div>
-    <div class="card">card2</div>
-   </div>
-   
-</div>
+<section>
+  <div class="row">
+    <div class="col-12 mb-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <!-- LEFT SIDE -->
+        <div class="d-flex align-items-center">
+          <p class="mb-0 mx-2">Show</p>
+
+          <select
+            class="form-select form-select-sm w-auto me-2"
+            style="background: #9e9e9e; border: none; border-radius: 2px; padding: 4px"
+          >
+            <option>10</option>
+            <option>25</option>
+            <option>50</option>
+          </select>
+
+          <p class="mb-0 mx-2">entries</p>
+
+          <div class="search-box">
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+
+            <input type="text" placeholder="Search..."  [(ngModel)]="searchTerm" (input)="onSearch()"/>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <button class="btn d-flex align-items-center gap-2">
+          <img src="/images/Vector1.svg" alt="Vector icon" />
+          Add Customer
+        </button>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <table class="table table-hover">
+        <thead class="main">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Status</th>
+
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filteredUsers; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>
+              <span
+                class="badge"
+                [style.background-color]="getStatusColor(i)"
+                [style.color]="getStatusTextColor(i)"
+                style="padding: 4px 8px; border-radius: 12px; font-size: 12px"
+              >
+                {{ getStatus(i) }}
+              </span>
+            </td>
+
+            <td>
+              <i class="fas fa-edit me-2" style="cursor: pointer; color: #007bff"></i>
+              <i class="fas fa-trash" style="cursor: pointer; color: red"></i>
+            </td>
+          </tr>
+          <tr *ngIf="filteredUsers.length === 0"><td colspan="6" class="text-center">No data found</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,36 +1,90 @@
-.people-container{
-    width: 1000px;
-    margin-top: 20px; /* Add space at the top */
-    position: relative; /* Use relative instead of absolute */
-    padding: 10px; /* Add internal padding */
-    box-sizing: border-box; /* Ensure padding doesn't affect total width */
-}
-.people-container .people-content{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.card{
-    width: 200px;
-    background: #f8f9fa;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
+.search-box {
+    position: relative;
+    width: 250px;
+    margin-left: 20px;
+    /* ✅ spacing from dropdown + text */
 }
 
-@media (max-width: 768px) {
-    .people-container {
-        width: 100%;
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 2px;
-    }
-    .people-container .people-content{
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-    }   
-    .card{
-        width: 100%;
-    }
+.search-box input {
+    width: 100%;
+    height: 38px;
+    padding-left: 38px;
+    /* space for icon */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
 }
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b5cf6;
+    /* purple like your screenshot */
+    pointer-events: none;
+}
+.btn{
+       
+                background: #6f42c1;
+                    color: white;
+                    border-radius: 12px;
+                    border: 1px solid white;
+                    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+.custom-card{
+    background-color: #ecf0f1;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.main{
+        background: rebeccapurple;
+            color: white;
+            border: none;
+            font-family: system-ui;
+        }
+
+        tbody{
+            border: 1px solid #ccc;
+        }
+        tbody tr{
+            background-color: #d6d4da;
+        }
+
+                .status-delivered {
+                    background-color: #28a745 !important;
+                    color: white;
+                    padding: 4px 11px;
+                    border-radius: 12px;
+                    font-size: 15px;
+                    font-family: auto;
+                        font-weight: 500;
+                }
+        
+                .status-process {
+                    background-color: #ffc107 !important;
+                    color: black;
+                    padding: 4px 11px;
+                    border-radius: 12px;
+                    font-size: 15px;
+                    font-family: auto;
+                        font-weight: 500;
+                }
+        
+                .status-canceled {
+                    background-color: #dc3545 !important;
+                    color: white;
+                    padding: 4px 11px;
+                    border-radius: 12px;
+                    font-size: 15px;
+                    font-family: auto;
+                        font-weight: 500;
+                }
