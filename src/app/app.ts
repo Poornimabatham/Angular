@@ -1,8 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar/navbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,8 +8,6 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterOutlet,
     Navbar,
-    MatIconModule,
-    MatSlideToggleModule,
     CommonModule
   ],
   templateUrl: './app.html',
