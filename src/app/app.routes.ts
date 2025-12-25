@@ -11,6 +11,10 @@ import { AddTocart } from './add-tocart/add-tocart';
 
 export const routes: Routes = [
   {
+    path: '',
+    component: Dashboard,
+  },
+  {
     path: 'feature',
     component: Feature,
   },
@@ -21,10 +25,6 @@ export const routes: Routes = [
   {
     path: 'about',
     component: About,
-  },
-  {
-    path: '',
-    component: Dashboard,
   },
   {
     path: 'training',
@@ -40,6 +40,11 @@ export const routes: Routes = [
   },
   {
     path: 'cart',
-    component:AddTocart,
+    component: AddTocart,
   },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
