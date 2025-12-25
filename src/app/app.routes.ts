@@ -11,6 +11,11 @@ import { AddTocart } from './add-tocart/add-tocart';
 
 export const routes: Routes = [
   {
+  path: '**',
+  redirectTo: '/',  // Use '/' instead of ''
+  pathMatch: 'full'
+},
+  {
     path: '',
     component: Dashboard,
   },
