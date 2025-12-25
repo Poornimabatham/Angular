@@ -7,6 +7,7 @@ import { Training } from './training/training';
 import { Projects } from './projects/projects';
 import { People } from './people/people';
 import { UserManagement } from './user-management/user-management';
+import { AddTocart } from './add-tocart/add-tocart';
 
 export const routes: Routes = [
   {
@@ -22,7 +23,7 @@ export const routes: Routes = [
     component: About,
   },
   {
-    path: 'dashboard',
+    path: '',
     component: Dashboard,
   },
   {
@@ -36,5 +37,9 @@ export const routes: Routes = [
   {
     path: 'people',
     component: People,
+  },
+  {
+    path: 'cart',
+    component:AddTocart,
   },
 ];

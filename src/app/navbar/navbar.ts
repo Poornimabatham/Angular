@@ -39,5 +39,9 @@ toggleMenu() {
   this.menuOpen = !this.menuOpen;
 }
 
+  addToCart() {
+    console.log('Add to Cart clicked');
+    this.router.navigate(['/cart']);
+  }
 }
 

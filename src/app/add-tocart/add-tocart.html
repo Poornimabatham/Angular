@@ -1,0 +1,62 @@
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="custom-card p-4">
+                <h4>Enter the card details</h4>
+
+                <form>
+                    <!-- ROW 1 : Circle -->
+                <!-- ROW 1 : Upload Circle -->
+                <div class="row g-3 mb-3">
+                    <div class="col-12">
+                    <div class="circle-upload" (click)="fileInput.click()">
+                        <img *ngIf="imagePreview" [src]="imagePreview" />
+                        <span *ngIf="!imagePreview">+</span>
+                    </div>
+                
+                    <input type="file" #fileInput hidden accept="image/*" (change)="onImageSelect($event)" />
+
+                    </div>
+                </div>
+
+
+                    <!-- ROW 2 : Three columns -->
+                    <div class="row g-3">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                            <input class="form-control" placeholder="Expiry Month">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                            <input class="form-control" placeholder="Expiry Year">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                            <input class="form-control" placeholder="CVV">
+                        </div>
+                    </div>
+
+                    <!-- ROW 3 -->
+                    <div class="row mt-3">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                            <input class="form-control" placeholder="Cardholder Name">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                            <input class="form-control" placeholder="Cardholder Name">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                            <input class="form-control" placeholder="Cardholder Name">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="row mt-3 mx-1">
+                <div class="col-12  button d-flex justify-content-end">
+<button class="btn btn-primary">Cancel
+
+</button>
+                </div>
+            </div>
+                   
+            
+        </div>
+    </div>
+</section>
