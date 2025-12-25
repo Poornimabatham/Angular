@@ -70,3 +70,16 @@
     text-decoration: underline;
     /* add underline on hover */
 }
+
+.link{
+          border: 1px solid grey;
+    border-radius: 12px;
+    padding: 3px;
+    color: #fff;
+    box-shadow: 0 0 10px #6f42c1;  border: 1px solid white;
+            border-radius: 10px;
+
+}
+.link:hover{
+    color: black;
+}

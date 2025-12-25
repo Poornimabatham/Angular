@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-add-tocart',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './add-tocart.html',
   styleUrls: ['./add-tocart.css'], // <-- must be 'styleUrls' and an array
 })

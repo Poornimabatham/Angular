@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Training implements OnInit {
   trainings = [
-    { title: 'Fixed training', icon: 'fa-solid fa-magnifying-glass' },
-    { title: 'Custom training', icon: 'fa-solid fa-book' },
-    { title: 'Live training', icon: 'fa-solid fa-video' },
-    { title: 'Online training', icon: 'fa-solid fa-globe' },
-    { title: 'Team training', icon: 'fa-solid fa-users' }
+    { title: 'sports', icon: 'fa-solid fa-magnifying-glass' },
+    { title: 'Fashion', icon: 'fa-solid fa-book' },
+    { title: 'Beauty ', icon: 'fa-solid fa-video' },
+    { title: 'Health', icon: 'fa-solid fa-globe' },
+    { title: 'Travel', icon: 'fa-solid fa-users' }
   ];
 
   currentYear: number = new Date().getFullYear();

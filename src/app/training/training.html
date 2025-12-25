@@ -1,44 +1,30 @@
-<div class="training-container">
+<div class="training-container mb-3">
     <div class="card-training text-center p-3" *ngFor="let training of trainings">
         <i [class]="training.icon"></i>
-        <h3>{{ training.title }}</h3>
+        <h5  class="training">{{ training.title }}</h5>
     </div>
 </div>
-<div class="training-padding">
-    <div class="card-training2 d-flex justify-content-between align-items-center p-2 ">
-        <!-- Left side -->
-        <div>
-            <h6 class="mb-0">Passed training:</h6>
-        </div>
 
-        <!-- Right side (Calendar) -->
-        <div class="calendar-header d-flex justify-content-between align-items-center">
-            <button class="btn btn-light btn-sm" (click)="prevYear()">&lt;</button>
-            <h4 class="mb-0 mx-2">{{ currentYear }}</h4>
-            <button class="btn btn-light btn-sm" (click)="nextYear()">&gt;</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 bg-white p-4">
+            <div class="d-flex  justify-content-between align-items-center gap-4 content">
+
+                <!-- Left Image -->
+                <img src="/images/wallpaper.jpg" class="img-fluid image-left" alt="">
+
+                <!-- Right Content -->
+                <div class="">
+                    <h4>
+                        <i class="fa-solid fa-earth-americas"></i> World of Fashion
+                    </h4>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Cumque unde voluptatem beatae totam.
+                    </p>
+                </div>
+
+            </div>
         </div>
     </div>
-    <!-- Training Table -->
-    <table class="table table-bordered table-striped text-center">
-        <thead class="table-dark">
-            <tr>
-                <th>Title</th>
-                <th>Type</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let training of filteredTrainings">
-                <td>{{ training.title }}</td>
-                <td>{{ training.type }}</td>
-                <td>{{ training.status }}</td>
-            </tr>
-            <tr *ngIf="filteredTrainings.length === 0">
-                <td colspan="3">No Trainings for {{ currentYear }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <div class="card-training2 mt-3">card3</div>
 </div>
