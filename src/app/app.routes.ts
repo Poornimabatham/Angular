@@ -10,11 +10,8 @@ import { UserManagement } from './user-management/user-management';
 import { AddTocart } from './add-tocart/add-tocart';
 
 export const routes: Routes = [
-  {
-  path: '**',
-  redirectTo: '/',  // Use '/' instead of ''
-  pathMatch: 'full'
-},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
   {
     path: '',
     component: Dashboard,
@@ -49,7 +46,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
-    pathMatch: 'full'
+    component: Dashboard
   }
 ];
