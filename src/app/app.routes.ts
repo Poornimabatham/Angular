@@ -8,12 +8,15 @@ import { Projects } from './projects/projects';
 import { People } from './people/people';
 import { UserManagement } from './user-management/user-management';
 import { AddTocart } from './add-tocart/add-tocart';
+import { Calender } from './calender/calender';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-
   {
     path: '',
+    component: Dashboard,
+  },
+  {
+    path: 'dashboard',
     component: Dashboard,
   },
   {
@@ -45,7 +48,16 @@ export const routes: Routes = [
     component: AddTocart,
   },
   {
+    path: 'calendar',
+    component: Calender
+  },
+  {
+    path: 'Calendar',
+    component: Calender
+  },
+  {
     path: '**',
     component: Dashboard
   }
 ];
+

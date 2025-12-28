@@ -1,0 +1,49 @@
+<section class="container">
+  <div class="row mb-3">
+    <div class="col-12">
+      <div class="content">
+        <h2>Hello,Amanda</h2>
+      </div>
+      <div class="content-text">
+        <h3>Announcement</h3>
+        <div class="sub-text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit luctus
+            libero ac vulputate.
+          </p>
+          <button class="btn">-></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+        <div class="col-12">
+            <h1>Recently Viewed</h1>
+            <div class="d-flex gap-3">
+                <img *ngFor="let image of images" [src]="'/' + image" [alt]="image"
+                    style="width: 150px; height: 100px; object-fit: cover;">
+            </div>
+        </div>
+    </div> -->
+
+  <div class="row">
+    <div class="col-12">
+      <h1>Recently Viewed</h1>
+
+    <div class="row">
+        <div class="col-6 col-md-3 col-lg-2 mb-3" *ngFor="let image of images">
+            <img [src]="image" alt="gallery image" class="gallery-img w-100"
+                style="height:150px; object-fit:contain; border-radius:50%;" />
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+        <h1>My Orders</h1>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+.sub-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.btn {
+  background: #004cff;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 3px 9px;
+}
+
+.content-text {
+  background: #ececec;
+  padding: 12px 5px;
+}
+
+.gallery-img {
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); */
+}
+
